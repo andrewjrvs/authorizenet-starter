@@ -42,3 +42,8 @@ you can kick off both services (angular and endpoint) by running ```npm start```
 If you want to see your transaction on authorize.net transaction log `Transaction search > Unsettled Transactions` you will need to enable 'live' mode `Account > Settings > Test Mode`
 
 To test a failed transactions you must enable live move. 
+
+
+## SUPER IMPORTANT NOTE
+
+don't be like me, and publish your private / transaction key!!!
