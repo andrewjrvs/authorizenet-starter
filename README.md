@@ -1,6 +1,6 @@
 # Authorizenet Starter
 
-Make sure yo have an account setup at <https://sandbox.authorize.net/>
+Make sure you have an account setup at <https://sandbox.authorize.net/>
 
 Update ./constants.js with your apiLoginKey, TransactionKey, and public key
 
@@ -46,4 +46,4 @@ To test a failed transactions you must enable live move.
 
 ## SUPER IMPORTANT NOTE
 
-don't be like me, and publish your private / transaction key!!!
+don't be like me - don't publish your private / transaction key!!!
