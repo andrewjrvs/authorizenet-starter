@@ -66,7 +66,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "authorizenet-starter:build"
+            "browserTarget": "authorizenet-starter:build",
+            "ssl": true,
+            "proxyConfig": "proxy.conf.js"
           },
           "configurations": {
             "production": {

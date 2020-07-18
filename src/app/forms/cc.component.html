@@ -1,0 +1,40 @@
+<p>
+    If you authorize.net account is set to 'live', you can test failure using data at the following site
+    <a href="https://developer.authorize.net/hello_world/testing_guide.html">https://developer.authorize.net/hello_world/testing_guide.html</a>
+</p>
+<pre>
+    Decline use zip: 46282
+    
+</pre>
+<dialog open *ngIf="ErrorMsg" >
+    <pre>
+        {{ErrorMsg}}
+    </pre>
+    <button value="cancel" onclick="this.parentNode.close()">close</button>
+</dialog>
+<form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+    <label>
+        Credit Card:
+        <input type="text" formControlName="cardNumber">
+    </label>
+    <label>
+        Card Code:
+        <input type="text" formControlName="cardCode">
+    </label>
+    
+    <label>
+        Exp Month / year:
+        <select formControlName="month">
+            <option *ngFor="let mn of months" [value]="mn">{{mn}}</option>
+        </select>
+        &nbsp;
+        <select formControlName="year">
+            <option *ngFor="let yr of years" [value]="yr">{{yr}}</option>
+        </select>
+    </label>
+    <label>
+        Zip code:
+        <input type="text" formControlName="zip">
+    </label>
+    <button type="submit" [disabled]="!paymentForm.valid">Submit</button>
+</form>

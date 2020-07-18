@@ -1,27 +1,44 @@
-# AuthorizenetStarter
+# Authorizenet Starter
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
+Make sure yo have an account setup at <https://sandbox.authorize.net/>
 
-## Development server
+Update ./constants.js with your apiLoginKey, TransactionKey, and public key
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## finding your keys
 
-## Code scaffolding
+### Api Login Key
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This is located `Account > Settings > API Credentials & Keys`
 
-## Build
+![location of API key](/readme_extras/apiKey.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Transaction key
 
-## Running unit tests
+You will be unable to find your Transaction key, however you can generate a new one. It is located under your API key at `Account > Settings > API Credentials & Keys`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![location of Transaction key](/readme_extras/transactionKey.png)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### Public key
 
-## Further help
+your public key can be located at `Account > Settings > Manage Public Client Key`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+![location of public key](/readme_extras/publicKey.png)
+
+## reading the application
+
+the application is composed of two parts, and Angular application (as the core app) and a node endpoint (which is located un the ./endpoint_src folder);
+
+If you want to see how your endpoint can submit a nonce to authorize.net check out ./endpoint_src/processPayments.js
+
+If you would like to see how to create a nonce check out ./src/app/forms/cc.component.ts
+
+## running the application
+
+you can kick off both services (angular and endpoint) by running ```npm start```
+
+## Items to note
+
+If you want to see your transaction on authorize.net transaction log `Transaction search > Unsettled Transactions` you will need to enable 'live' mode `Account > Settings > Test Mode`
+
+To test a failed transactions you must enable live move. 
