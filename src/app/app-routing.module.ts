@@ -23,7 +23,7 @@ const routes: Routes = [
             { path: '', redirectTo: 'cc', pathMatch: 'full' },
         ]
     },
-    { path: '', redirectTo: '/payment', pathMatch: 'full' },
+    { path: '', redirectTo: '/payment/cc', pathMatch: 'full' },
 ];
 
 @NgModule({
