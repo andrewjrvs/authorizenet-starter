@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { AcceptJSService, CreditCard } from '@openutility/acceptjs-angular-wrapper';
 import { HttpClient } from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -25,7 +25,7 @@ export class CCComponent implements OnInit {
     amount: [((Math.random() * 100) + 1).toFixed(2)]
   });
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
               private _acceptJSSrv: AcceptJSService,
               private _http: HttpClient,
               private route: ActivatedRoute,
